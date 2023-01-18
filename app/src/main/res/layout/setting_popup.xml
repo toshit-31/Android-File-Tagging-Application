@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:id="@+id/popup_root" android:background="#75FFFFFF"
+    android:layout_gravity="center" android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#fff"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="fill"
+            >
+
+
+            <TextView
+                android:id="@+id/file_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="10dp"
+                android:text="PopUp"
+                android:textFontWeight="800"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/close_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_baseline_close_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/meta_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:paddingHorizontal="15dp"
+            android:textFontWeight="800"
+            android:text="50mb | 13/11/2022"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:paddingHorizontal="15dp"
+            android:textFontWeight="800"
+            android:text="Tags"
+            android:layout_marginBottom="10dp"
+            />
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/tag_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            app:flexWrap="wrap"
+
+            >
+
+        </com.google.android.flexbox.FlexboxLayout>
+        <TextView
+            android:id="@+id/no_tag_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="No Tags"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp"
+            android:textFontWeight="800"
+            android:text="Add Tags"
+            />
+
+        <LinearLayout
+            android:id="@+id/popup_base"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            >
+
+            <EditText
+                android:id="@+id/tag_name_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:hint="New Tag Name"
+            />
+
+        </LinearLayout>
+
+        <Button
+            android:textColor="@color/white"
+            android:id="@+id/add_tag_btn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Add Tag"
+            android:backgroundTint="#8298E7"
+            android:layout_marginHorizontal="50dp"
+            />
+
+        <ListView
+            android:id="@+id/avail_tag_list"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

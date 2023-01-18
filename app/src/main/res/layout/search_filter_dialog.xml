@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Close Dialog -->
+    <ImageView
+        android:id="@+id/btn_filter_close"
+        android:contentDescription="Close Filter Dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        app:srcCompat="@drawable/ic_baseline_close_24"
+        android:layout_margin="5dp"/>
+
+    <!-- Search Filter Text -->
+    <TextView
+        android:id="@+id/search_filter_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="SEARCH FILTER"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <!-- Search Filter Text -->
+    <TextView
+        android:id="@+id/search_filter_para"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="10dp"
+        android:text="( Select Search Operation )"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="12sp"/>
+
+    <!--    AND Filter Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/and_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="20dp"
+        app:cardCornerRadius="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_and_filter"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:textColor="#673AB7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="CONTAINS EACH"
+                android:textAlignment="viewStart" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/and_filter_chipGroup"
+                style="@style/Widget.MaterialComponents.Chip.Entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_and_filter"
+                android:background="#CCAEFB"
+                android:paddingHorizontal="10dp"
+                app:singleLine="true"/>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!--    OR Filter Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/or_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="20dp"
+        app:cardCornerRadius="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_or_filter"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:textColor="#673AB7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="CONTAINS"
+                android:textAlignment="viewStart" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/or_filter_chipGroup"
+                style="@style/Widget.MaterialComponents.Chip.Entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_or_filter"
+                android:background="#CCAEFB"
+                android:paddingHorizontal="10dp"
+                app:singleLine="true"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--    NOT Filter Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/not_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="20dp"
+        app:cardCornerRadius="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_not_filter"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:textColor="#673AB7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="DOES NOT CONTAINS"
+                android:textAlignment="viewStart"/>
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/not_filter_chipGroup"
+                style="@style/Widget.MaterialComponents.Chip.Entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_not_filter"
+                android:background="#CCAEFB"
+                android:paddingHorizontal="10dp"
+                app:singleLine="true"/>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_clear_filter"
+            android:backgroundTint="#D32F2F"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="Clear Filter"
+            android:layout_margin="5dp"
+            android:layout_weight="1"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_filter_result"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="Results"
+            android:backgroundTint="#8298E7"
+            android:layout_margin="5dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</LinearLayout>

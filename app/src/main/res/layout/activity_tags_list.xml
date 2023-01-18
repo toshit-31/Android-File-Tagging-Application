@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TagsListActivity">
+
+    <!-- Default Tag Cloud using Relative Layout-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fixedTagsCloud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/docsTagsBtn"
+            android:text="Documents"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/imgTagsBtn"
+            android:text="Images"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="@+id/docsTagsBtn"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/videoTagsBtn"
+            android:text="Videos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintTop_toBottomOf="@+id/docsTagsBtn"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/audioTagsBtn"
+            android:text="Audio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/docsTagsBtn"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Default Tag Cloud using Relative Layout-->
+    <!--
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/docsTagsBtn"
+            android:text="Documents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/imgTagsBtn"
+            android:text="Images"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/videoTagsBtn"
+            android:text="Videos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/docsTagsBtn"
+            android:layout_alignParentLeft="true"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/audioTagsBtn"
+            android:text="Audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgTagsBtn"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    -->
+
+    <!--No Tags Created by User-->
+    <TextView
+        android:id="@+id/notags_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="354dp"
+        android:layout_marginEnd="151dp"
+        android:layout_marginBottom="358dp"
+        android:gravity="center"
+        android:text="NO TAGS CREATED!"
+        android:visibility="visible" />
+
+    <!-- Tags List Created by User-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tags_recycler_view"
+        android:layout_below="@+id/fixedTagsCloud"
+        />
+</RelativeLayout>
